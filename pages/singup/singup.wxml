@@ -1,0 +1,54 @@
+<view class="button-group {{isIphoneX ?'fix-iphonex-button':''}}">
+<view class="container">
+  <view class='login'>
+    <view class="black_top">用户报名</view>
+    <form bindsubmit='formSubmit'report-submit>
+    <view class="white_bottom">
+    <view class='text'>学生姓名：<input class="inputText"  name='name' maxlength='20'/></view>
+      <view class='line'></view>
+      <view class='text'>
+      <radio-group class='radio-group' bindchange='radioChange'>
+      选择性别：<radio value='男' checked='true'>男</radio><radio  value='女'>女</radio>
+      </radio-group>
+      </view>
+      <view class='line'></view>
+      <view class='text'>        
+      家长姓名：<input class="inputText"  name='parentName' maxlength='20'/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>
+      电话号码：<input class="inputText"  name='phoneNumOne' maxlength='11'/>
+      </view>
+      <view class='line'></view>
+      <view class='pickerView'>
+      <picker bindchange="bindPickerChangeSchool" value="{{schoolIndex}}" range="{{schoolList}}" range-key="name" >
+        <view class="picker">
+          选择学校：{{schoolList[schoolIndex].name}}
+           <view class='view_icon2'>
+          </view>
+        </view>
+      </picker>
+      </view>
+      <view class='line'></view>
+      <view class='pickerView'>  
+      <picker bindchange="bindPickerChangeCampus" value="{{campusIndex}}" range="{{campusList}}" range-key="campusName" >
+        <view class="picker">
+          选择校区：{{campusList[campusIndex].campusName}}
+        </view>
+      </picker>
+      </view>
+      <view class='line'></view>
+      <view class='pickerView'>   
+      <picker bindchange="bindPickerChangeGrade" value="{{gradeIndex}}" range="{{gradeList}}" range-key="name" >
+        <view class="picker">
+         选择年级： {{gradeList[gradeIndex].name}}
+        </view>
+      </picker>
+      </view>
+      <view class='line'></view>
+      <button class="loginBtn"  form-type='submit'>确定报名</button>
+    </view>
+    </form>
+  </view>
+</view>
+</view>

@@ -1,0 +1,41 @@
+
+.content{
+  margin: 0 auto;
+  color: white;
+}
+button{
+  width: 500rpx;
+  margin: 0 auto;
+  background-color: #358edd;  
+}
+.sing{
+  margin-top: 300rpx;
+  margin-bottom: 100rpx;
+}
+.view_top{
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+  
+}
+.image_r{
+  width: 300rpx;
+  height: 64rpx;
+  margin-left: 50rpx;
+}
+.image_b{
+  margin-top: 60rpx;
+  width: 228rpx;
+  height: 60rpx; 
+  margin-left: 250rpx;
+}
+.v_bottom{
+  margin: 0 auto;
+  margin-top: 180rpx;
+  
+}
+.v_text{
+  color:#909090;
+  font-size: 20rpx;
+  text-align: center;
+ 
+}

@@ -1,0 +1,18 @@
+<view class="button-group {{isIphoneX ?'fix-iphonex-button':''}}">
+<view class="container">
+  <view class='login'>
+    <view class="black_top">用户登录</view>
+    <form bindsubmit='formSubmit'report-submit>
+    <view class="white_bottom">
+    <view class='text'>学生姓名：<input class="inputText"  name='name' maxlength='20'/></view>
+      <view class='line'></view>
+      <view class='text'>
+      电话号码：<input class="inputText"  name='phoneNumOne' maxlength='11'/>
+      </view>
+      <view class='line'></view>
+      <button class="loginBtn"  form-type='submit'>确定</button>
+    </view>
+    </form>
+  </view>
+</view>
+</view>

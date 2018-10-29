@@ -1,0 +1,42 @@
+<!--pages/progress/progress.wxml-->
+<view class="button-group {{isIphoneX ?'fix-iphonex-button':''}}">
+<view class='table'>
+  <view class="tr bg-w">
+    <view class="td score1">姓名：{{student.name}}</view>
+    <view class="td score1">性别：{{student.sex}}</view>
+    <view class="td score1">学校：{{student.schoolName}}</view>
+  </view>
+   <view class="tr bg-w">
+    <view class="td score1">校区：{{student.campusName}}</view>
+    <view class="td score1">缴费：{{student.payCondition}}</view>
+    <view class="td score1">
+      <button type="default" size="mini" style='padding:0 1em;' bindtap="addCourse" >添加课程</button>
+    </view>
+  </view>
+</view>
+<view class="table">
+  <view class="tr bg-w">
+  <view class="th num">序号</view> 
+    <view class="th num1">科目名称</view>
+    <view class="th">开始时间</view>
+    <view class="th">结束时间</view>
+    <view class="th score1">操作</view>
+  </view>
+  <block wx:for="{{stuCourseList}}" wx:key="RowNum">
+    <view class="tr bg-g">
+      <view class="td num">{{index+1}}</view>
+      <view class="td num1">{{item.course.subjectName}}</view>
+      <view class="td score">{{item.course.startTime}}</view>
+      <view class="td score">{{item.course.endTime}}</view>
+      <view class="td score1">
+      <!--按钮默认样式，点击事件-->
+      <form bindsubmit='showCard'report-submit>
+        <button type="default" size="mini" style='padding:0 1em;' form-type='submit' data-index="{{index}}" >听课证</button>
+      </form>
+        <button type="default" size="mini" style='padding:0 1em;' bindtap="deleteCourse" data-index="{{index}}" >删除</button>
+      </view>
+    </view>
+  </block>
+</view>
+</view>
+<!-- <view class='view_b'><input type='digit' class='score' placeholder="评分"></input><button class='sure'>确定</button></view> -->

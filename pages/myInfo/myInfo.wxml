@@ -1,0 +1,50 @@
+<view class="button-group {{isIphoneX ?'fix-iphonex-button':''}}">
+<view class="container">
+  <view class='login'>
+    <view class="black_top">用户信息</view>
+    <form bindsubmit='formSubmit'>
+    <view class="white_bottom">
+    <view class='text'>学生姓名：<input class="inputText"  name='name' value='{{student.name}}'readonly = "readonly"/></view>
+      <view class='line'></view>
+      <view class='text'>
+      性别：<input class="inputText"  name='name' value='{{student.sex}}' readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>        
+      家长姓名：<input class="inputText"  name='parentName' value='{{student.parentName}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>
+      电话号码：<input class="inputText"  name='phoneNumOne' value='{{student.phoneNumOne}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>        
+      学校：<input class="inputText"  name='schoolName' value='{{student.schoolName}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>        
+      校区：<input class="inputText"  name='campusName' value='{{student.campusName}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+     <view class='text'>        
+      年级：<input class="inputText"  name='gradeName' value='{{student.gradeName}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>        
+      缴费信息：<input class="inputText"  name='payCondition' value='{{student.payCondition}}'readonly = "readonly"/>
+      </view>
+       <view class='line'></view>
+      <view class='text'>        
+      报名号：<input class="inputText"  name='payCondition' value='{{student.applyNum}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <view class='text'>        
+      学籍号：<input class="inputText"  name='payCondition' value='{{student.studentCode}}'readonly = "readonly"/>
+      </view>
+      <view class='line'></view>
+      <button class="loginBtn"  form-type='submit'>修改信息</button>
+    </view>
+    </form>
+  </view>
+</view>
+</view>

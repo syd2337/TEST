@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/choice/choice",
+    "pages/singup/singup",
+    "pages/sing/sing",
+    "pages/myInfo/myInfo",
+    "pages/showCard/showCard",
+    "pages/myCourse/myCourse",
+    "pages/addCourse/addCourse",
+    "pages/updateMyInfo/updateMyInfo"     
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "报名",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#06b3ad",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/myCourse/myCourse",
+        "iconPath": "image/home.png",
+        "selectedIconPath": "image/selectHome.png",
+        "text": "我的课程"
+      },
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "iconPath": "image/car.png",
+        "selectedIconPath": "image/selectCar.png",
+        "text": "我的信息"
+      }
+      
+    ]
+  },
+  "debug": true
+}

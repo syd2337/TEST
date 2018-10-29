@@ -1,0 +1,16 @@
+<view class="content">
+<!--type属性为primary-->
+<!--size属性为default-->
+<button class='sing' bindtap='singUp' > 我已报名 </button>
+<button class='noSing' bindtap='noSingUp' > 我未报名 </button>
+<!--size属性为mini-->
+<view class='v_bottom'>
+    <image class='image_b' src='../../image/top.png'></image>
+  </view>
+  <view class='v_text'>
+    <text>
+    ©版权所有 天津智信培训学校有限公司 津ICP备18008371号-1\n
+    文化艺术培训 | 阅读与写作能力培训 | 科学技术类培训 | 逻辑思维培训
+  </text>
+  </view>
+</view>

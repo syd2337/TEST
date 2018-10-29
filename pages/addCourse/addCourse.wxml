@@ -1,0 +1,72 @@
+<!--pages/progress/progress.wxml-->
+<view class="button-group {{isIphoneX ?'fix-iphonex-button':''}}">
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th num">序号</view>
+    <view class="th score">科目</view>
+    <view class="th score">开始时间</view>
+    <view class="th score">结束时间</view>
+    <view class="th roll-back">操作</view>
+  </view>
+  <checkbox-group bindchange="checkboxChange">
+  <block wx:for="{{courseList}}" wx:key="RowNum">
+    <view class="tr bg-g">
+      <view class="td num"><checkbox value="{{item.id}}" checked="{{item.checked}}"/>{{index+1}}</view>
+      <view class="td score">{{item.subjectName}}</view>
+      <view class="td score">{{item.startTime}}</view>
+      <view class="td score">{{item.endTime}}</view>
+      <view class="td roll-back">
+      <!--按钮默认样式，点击事件-->
+        <button type="default" size="mini" style='padding:0 1em;' bindtap="clickCourse" data-index="{{index}}" >详情</button>
+      </view>
+    </view>
+  </block>
+  </checkbox-group>
+  <view class="tr bg-g">
+      <view class="td1"><button type="default" size="mini" style='padding:0em 1em;' bindtap="addStuCourse"  data-statu="close" >确认添加</button></view>
+    </view>
+</view>
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+ <view class="drawer_title">查看课程详情</view> 
+ <view class="drawer_content"> 
+ <view class="top grid">
+    <view class="table1">
+    <view class="tr bg-g">
+      <view class="td1">年级</view>
+      <view class="td1">科目</view>
+      <view class="td1">开始时间</view>
+    </view>
+    <view class="tr bg-g">
+      <view class="td1">{{course.gradeName}}</view>
+      <view class="td1">{{course.subjectName}}</view>
+      <view class="td1">{{course.startTime}}</view>
+    </view>
+    <view class="tr bg-g">
+      <view class="td1">结束时间</view>
+      <view class="td1">课程时长</view>
+      <view class="td1">课程资费</view>
+    </view>
+    <view class="tr bg-g">
+      <view class="td1">{{course.endTime}}</view>
+      <view class="td1">{{course.period}}</view>
+      <view class="td1">{{course.rates}}元</view>
+    </view>
+    <view class="tr bg-g">
+      <view class="td1"><button type="default" size="mini" style='padding:0em 1em;' bindtap="powerDrawerClose"  data-statu="close" >确定</button></view>
+    </view>
+    <!--按钮默认样式，点击事件-->
+  
+</view>
+ </view>
+ </view> 
+ <!--<view class="btn_ok" bindtap="powerDrawerClose" data-statu="close">确定</view>--> 
+ 
+</view>
+</view>
+<!-- <view class='view_b'><input type='digit' class='score' placeholder="评分"></input><button class='sure'>确定</button></view> -->
+
