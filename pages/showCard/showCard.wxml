@@ -2,40 +2,7 @@
 <!--pages/progress/progress.wxml-->
 <view class="button-group {{isIphoneX ?'fix-iphonex-button':''}}">
 <view class='table'>
-  <view class="tr bg-w">
-    <view class="td score1">姓名：{{stuCourse.student.name}}</view>
-    <view class="td score1">性别：{{stuCourse.student.sex}}</view>
-    
-  </view>
-   <view class="tr bg-w">
-    <view class="td score1">学校：{{stuCourse.student.schoolName}}</view>
-    <view class="td score1">校区：{{stuCourse.student.campusName}}</view> 
-  </view>
-    <view class="tr bg-w">
-      <view class="td score1">报名：{{stuCourse.student.applyNum}}</view>
-      <view class="td score1">学籍：{{stuCourse.student.studentCode}}</view>
-    </view>
-    <view class="tr bg-w">
-      <view class="td score1">科目名称</view>
-      <view class="td score1">{{stuCourse.course.subjectName}}</view>
-    </view>
-    <view class="tr bg-w">
-      <view class="td score1">开始时间</view>
-      <view class="td score1">{{stuCourse.course.startTime}}</view>
-    </view>
-    <view class="tr bg-w">
-      <view class="td score1">结束时间</view>
-      <view class="td score1">{{stuCourse.course.endTime}}</view>
-    </view>
-    <view class="tr bg-w">
-      <view class="td score1">课程时长</view>
-      <view class="td score1">{{stuCourse.course.period}}</view>
-    </view>
-    <view class="tr bg-w">
-      <view class="td score1">课程资费</view>
-      <view class="td score1">{{stuCourse.course.rates}}元</view>
-    </view>
-    <view class="tr1 bg-w">
+  <view class="tr1 bg-w">
       <view class="td score1">二维码</view>
       <view class="td score1">
       <!-- 存放二维码的图片-->
@@ -49,6 +16,27 @@
       </view>
     </view>
 </view>
+<view class='table'>
+  <view class="tr bg-w">
+    <view class="td score1">姓名：{{student.name}}</view>
+    <view class="td score1">学籍：{{student.studentCode}}</view>
+  </view>
+  <view class="tr bg-w">
+    <view class="td score1">学校：{{student.schoolName}}</view>
+    <view class="td score1">校区：{{student.campusName}}</view> 
+  </view>
+</view>
+<view class='table'>
+<block wx:for="{{stuCourseList}}" wx:key="RowNum">
+    <view class="tr bg-g">
+      <view class="td num">{{item.course.gradeName}}</view>
+      <view class="td num1">{{item.course.subjectName}}</view>
+      <view class="td score">{{item.course.startTime}}起</view>
+      <view class="td score">{{item.course.times}}次</view>
+    </view>
+  </block>
+</view>
+
 </view>
 <!-- <view class='view_b'><input type='digit' class='score' placeholder="评分"></input><button class='sure'>确定</button></view> -->
 

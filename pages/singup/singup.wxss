@@ -79,3 +79,6 @@ page{
 radio{
   zoom: 65%;
 }
+picker{
+  width: 100%;
+}

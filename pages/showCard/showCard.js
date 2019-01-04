@@ -6,9 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    stuCourse:'',
+    stuCourseList:'',
     canvasHidden: false, 
     imagePath: '',
+    student:''
   },
 
   /**
@@ -17,10 +18,12 @@ Page({
   onLoad: function (options) {
     var index = options.index;
     var stuCourseList = wx.getStorageSync('stuCourseList')
+    var student = wx.getStorageSync('student')
     this.setData({
-      stuCourse: stuCourseList[index]
+      stuCourseList: stuCourseList,
+      student: student
     })
-    var jiaoyanCode = stuCourseList[index].id;
+    var jiaoyanCode = student.id;
     var size = this.setCanvasSize(); //动态设置画布大小    
     this.createQrCode(jiaoyanCode, "mycanvas", size.w, size.h);  
   },

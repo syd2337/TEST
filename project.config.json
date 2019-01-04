@@ -1,15 +1,16 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
-	"appid": "wx3b3717e26f02a074",
+	"appid": "wx099d35ce0fb6174e",
 	"projectname": "StuApply",
 	"condition": {
 		"search": {

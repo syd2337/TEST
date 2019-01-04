@@ -74,7 +74,7 @@ Page({
       success: function (res) {
         console.log(res)
         //console.log(res.data.RespInfo.Id)
-        if (res.data != "") {
+        if (res.data != "error" && res.data!="") {
           var stuCourseList = res.data.stuCourseList;
           if (stuCourseList.length > 0) {
             for (var i = 0; i < stuCourseList.length; i++) {//用for循环把所有的时间戳都转换程时间格式，这里调用的是小程序官方demo中带的方法，

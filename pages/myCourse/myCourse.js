@@ -16,12 +16,22 @@ Page({
     })
   },
   showCard:function(e){
-    console.log(e)
-    var fromId=e.detail.fromId;//表单id
-    var index = e.detail.target.dataset.index;//题目的下标
-    wx.navigateTo({
-      url: '../showCard/showCard?index='+index,  //跳转页面的路径，可带参数 ？隔开，不同参数用 & 分隔；相对路径，不需要.wxml后缀
-    })
+    var ifNotPay = this.data.student.payCondition;
+    if (ifNotPay == "未缴费") {
+      wx.showModal({
+        title: '提示',
+        content: "您未缴费，不能查看听课证",
+        showCancel: false,
+      })
+    }else{
+      wx.navigateTo({
+        url: '../showCard/showCard',  //跳转页面的路径，可带参数 ？隔开，不同参数用 & 分隔；相对路径，不需要.wxml后缀
+      })
+    }
+    //console.log(e)
+    //var fromId=e.detail.fromId;//表单id
+    //var index = e.detail.target.dataset.index;//题目的下标
+    
   },
   deleteCourse:function(e){
     var that=this;
@@ -64,6 +74,11 @@ Page({
                   that.setData({
                     stuCourseList: stuCourseList
                   })
+                  wx.setStorage({
+                    key: 'stuCourseList',
+                    data: stuCourseList
+
+                  });
                 } else {
                   wx.showModal({
                     title: '提示',

@@ -4,7 +4,9 @@
   <view class="tr bg-w">
     <view class="td score1">姓名：{{student.name}}</view>
     <view class="td score1">性别：{{student.sex}}</view>
-    <view class="td score1">学校：{{student.schoolName}}</view>
+    <view class="td score1">     
+      <button type="default" size="mini" style='padding:0 1em;' bindtap='showCard'>听课证</button>    
+    </view>
   </view>
    <view class="tr bg-w">
     <view class="td score1">校区：{{student.campusName}}</view>
@@ -30,9 +32,7 @@
       <view class="td score">{{item.course.endTime}}</view>
       <view class="td score1">
       <!--按钮默认样式，点击事件-->
-      <form bindsubmit='showCard'report-submit>
-        <button type="default" size="mini" style='padding:0 1em;' form-type='submit' data-index="{{index}}" >听课证</button>
-      </form>
+      
         <button type="default" size="mini" style='padding:0 1em;' bindtap="deleteCourse" data-index="{{index}}" >删除</button>
       </view>
     </view>

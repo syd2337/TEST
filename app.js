@@ -52,7 +52,7 @@ App({
     isIphoneX: false,
   },
   onHide: function () {
-    wx.clearStorage();
+    //wx.clearStorage();
     console.log('App onHide');
 
   },

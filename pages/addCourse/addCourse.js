@@ -41,7 +41,7 @@ Page({
         },
         success: function (res) {
           console.log(res)
-          if (res.data == "") {
+          if (res.data == "success") {
             wx.showModal({
               title: '提示',
               content: "不要重复添加课程",
@@ -57,9 +57,15 @@ Page({
               key: 'stuCourseList',
               data: stuCourseList,
               success: function (res) {
+                wx.showModal({
+                  title: '提示',
+                  content: "添加课程成功",
+                  showCancel: false,
+                })
                 //console.log(res+'异步保存成功')
               }
             });
+            
             //跳转页面
             wx.switchTab({
               url: '../myCourse/myCourse',
@@ -164,7 +170,8 @@ Page({
       url: servsers + 'toAddAppStuCourse.html',
       method: 'post',
       data: {
-        gradeName: student.gradeName
+        gradeName: student.gradeName,
+        campusName:student.campusName
       },
       header: {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"

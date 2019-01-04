@@ -21,13 +21,27 @@
       </view>
       <view class='line'></view>
       <view class='pickerView'>
-      <picker bindchange="bindPickerChangeSchool" value="{{schoolIndex}}" range="{{schoolList}}" range-key="name" >
+      学校名称：<view class='xia'>
+      <input id='searchInput'  type="text" bindinput="bindKeyInput" value="{{inputValue}}"     data-statu="open" />
+      </view>
+<!--mask-->
+     
+      <!--<picker bindchange="bindPickerChangeSchool" value="{{schoolIndex}}" range="{{schoolList}}" >
         <view class="picker">
-          选择学校：{{schoolList[schoolIndex].name}}
+          选择学校：{{schoolList[schoolIndex]}}
            <view class='view_icon2'>
           </view>
         </view>
-      </picker>
+      </picker>-->
+      </view>
+       <view class="input_screen" bindtap="bindKeyInput" data-statu="close" wx:if="{{showInputStatus}}"></view> 
+<!-- auto-completion  -->
+      <view class="scrollview" wx:if="{{showInputStatus}}">
+        <view  wx:for="{{bindSource}}" wx:key="index">
+                <view id="{{item}}"  class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
+                          {{item}}   
+                </view>
+        </view>
       </view>
       <view class='line'></view>
       <view class='pickerView'>  
@@ -52,3 +66,5 @@
   </view>
 </view>
 </view>
+
+
